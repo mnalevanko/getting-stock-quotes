@@ -31,7 +31,7 @@ def get_stock_price_from_wsj(ticker, opening_default = 0):
     paragraphs_vol = soup.find_all('p', class_='volume')
     volume = int(paragraphs_vol[0].get_text().replace(',',''))
 
-    return 0, high_price, low_price, last_price, volume
+    return opening_default, high_price, low_price, last_price, volume
 
 if __name__ == '__main__':
 
